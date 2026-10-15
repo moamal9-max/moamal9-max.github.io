@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Moamal Al-Adili · Portfolio</title>
+<meta name="description" content="Portfolio of Moamal Al-Adili, graduate project manager in Manchester: case studies, software tools and university engineering work, with sources and limits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<meta name="author" content="Moamal Al-Adili">
+<meta name="theme-color" content="#13202A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%2313202A%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2226%22 fill=%22%23F5F7F6%22 text-anchor=%22middle%22%3EMA%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moamal Al-Adili · Project management and business analysis portfolio">
+<meta property="og:description" content="Portfolio of Moamal Al-Adili, graduate project manager in Manchester: case studies, software tools and university engineering work, with sources and limits.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://moamal9-max.github.io/">
+<meta property="og:url" content="https://moamal9-max.github.io/">
+<meta property="og:image" content="https://moamal9-max.github.io/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Moamal Al-Adili portfolio">
+<meta name="twitter:image" content="https://moamal9-max.github.io/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Moamal Al-Adili", "jobTitle": "Graduate Project Manager", "email": "mailto:moamal9@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Manchester", "addressCountry": "GB"}, "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of Liverpool"}, {"@type": "CollegeOrUniversity", "name": "University of Salford"}], "knowsAbout": ["Project management", "Project controls", "Business analysis", "Schedule analysis", "Building energy modelling", "Aeronautical engineering"], "url": "https://moamal9-max.github.io/"}</script>
+<style>
+/* Layout: home is a hero plus a filterable grid of project cards; each card opens a case study view (#/slug) with the same four parts. Charts are inline SVG drawn to the container width, animated once when they scroll into view. */
+:root{
+  --paper:#F5F7F6; --panel:#FFFFFF; --ink:#13202A; --muted:#566673; --line:#D7DEE2; --grid:rgba(30,90,168,.06);
+  --blue:#1E5AA8; --magenta:#A3156F; --amber:#B86E00; --neg:#B3261E; --soft:#EAF0F7;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif; --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0D141A; --panel:#121C24; --ink:#E4EAEE; --muted:#93A3AE; --line:#24333E; --grid:rgba(111,164,232,.07);
+  --blue:#74A8EC; --magenta:#E06BB2; --amber:#E2A13E; --neg:#F08079; --soft:#172634; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D141A; --panel:#121C24; --ink:#E4EAEE; --muted:#93A3AE; --line:#24333E; --grid:rgba(111,164,232,.07);
+  --blue:#74A8EC; --magenta:#E06BB2; --amber:#E2A13E; --neg:#F08079; --soft:#172634; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:780px}
+a{color:var(--blue)} a:focus-visible,button:focus-visible,svg:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.label{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+[hidden]{display:none!important}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.brand{font:700 17px var(--display);font-stretch:85%;color:var(--ink);text-decoration:none;white-space:nowrap}
+.topnav{display:flex;gap:18px;margin-left:auto;align-items:center}
+.topnav a{font-family:var(--mono);font-size:13px;color:var(--muted);text-decoration:none}
+.topnav a:hover{color:var(--blue)}
+.themebtn{font:500 13px var(--mono);background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+@media (max-width:560px){.topnav a.hide-s{display:none}}
+
+/* hero */
+.hero{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:56px 44px;display:grid;gap:18px}
+h1{font-size:clamp(42px,8vw,76px);font-weight:800;font-stretch:80%;line-height:.95}
+.lede{font-size:clamp(18px,2.4vw,21px);max-width:44ch;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:500 14px var(--body);border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:9px 15px;border-radius:4px;cursor:pointer;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.btn.ghost{background:transparent;color:var(--ink)}
+.email{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.copied{font-family:var(--mono);font-size:12px;color:var(--blue)}
+.highlights{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:6px}
+.highlights div{display:grid}
+.highlights b{font:700 22px/1.1 var(--display);font-stretch:85%}
+.highlights span{font-size:13px;color:var(--muted)}
+
+main{display:block}
+.block{padding-block:52px 8px}
+.block>h2{font-size:30px;font-weight:700;font-stretch:85%;margin-bottom:6px}
+.intro{color:var(--muted);margin:0 0 20px;max-width:62ch}
+
+/* filters + cards */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{font:500 13.5px var(--body);border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 13px;border-radius:999px;cursor:pointer}
+.chip span{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:6px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip[aria-pressed="true"] span{color:inherit;opacity:.7}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:18px}
+.card{display:grid;grid-template-rows:auto 1fr;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none;min-width:0}
+.thumb{aspect-ratio:16/9;position:relative;overflow:hidden;border-bottom:1px solid var(--line);background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.thumb svg{position:absolute;inset:0;width:100%;height:100%}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top}
+.thumb .tframe{position:absolute;inset:14px 14px -6px 14px;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.thumb .tframe .fbar{height:16px;padding:0 7px;gap:4px}
+.thumb .tframe .fbar i{width:5px;height:5px}
+.thumb .tframe img{position:static;display:block;width:100%;height:auto}
+.cbody{padding:16px 18px 18px;display:grid;gap:6px;align-content:start}
+.ccat{font-family:var(--mono);font-size:12px;color:var(--magenta)}
+.card h3{font-size:21px;font-weight:700;font-stretch:88%;line-height:1.15}
+.card p{margin:0;font-size:14.5px;color:var(--muted)}
+.ctools{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.cmore{font-size:14px;color:var(--blue);font-weight:500;margin-top:4px}
+.thumb svg text{font-family:var(--mono);font-size:13px;fill:var(--ink)}
+@media (prefers-reduced-motion:no-preference){
+  .card{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+  .card:hover{transform:translateY(-3px);border-color:var(--muted);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+  .card:hover .cmore{text-decoration:underline}
+  .card.show{animation:cardin .35s ease both}
+  @keyframes cardin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+
+/* rows */
+.rows{display:grid;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:6px 24px;padding:16px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:18px;font-weight:700;font-stretch:90%}
+.row p{margin:0}
+.row .where{color:var(--muted);font-size:14px}
+@media (max-width:620px){.row{grid-template-columns:1fr}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skills ul{margin:6px 0 0;padding-left:18px}
+
+/* case study */
+.case{padding-block:28px 40px}
+.back{font-family:var(--mono);font-size:13px;text-decoration:none;display:inline-block;margin-bottom:22px}
+.case-head{display:grid;gap:10px;margin-bottom:22px}
+.case-head h2{font-size:clamp(30px,5vw,46px);font-weight:800;font-stretch:82%;line-height:1.02;outline:none}
+.case-head .sum{font-size:clamp(17px,2.2vw,19px);margin:0;max-width:56ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px 14px}
+.tags span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tags span:first-child{color:var(--magenta)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin:0 0 26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.facts div{padding:12px 16px 12px 0;min-width:0}
+.facts dt{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-size:14.5px}
+.visual{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:12px;margin-bottom:8px;min-width:0}
+.part{display:grid;gap:12px;padding-top:30px}
+.part>h3{font-size:22px;font-weight:700;font-stretch:88%;display:flex;gap:12px;align-items:baseline}
+.part>h3 span{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--magenta)}
+.part p{margin:0;max-width:68ch}
+.points{margin:0;padding-left:18px;display:grid;gap:7px;max-width:68ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat{border-left:2px solid var(--blue);padding:2px 0 2px 12px;min-width:0}
+.stat b{display:block;font:700 26px/1.15 var(--display);font-stretch:85%;font-variant-numeric:tabular-nums}
+.stat span{font-size:13.5px;color:var(--muted)}
+.skillchips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.skillchips li{font-size:13.5px;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 12px}
+.footnote{font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin-top:30px!important;max-width:68ch}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.pn a{border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-decoration:none;background:var(--panel);display:grid;gap:2px;min-width:0}
+.pn a span{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.pn a b{font:700 16px/1.25 var(--display);font-stretch:90%;color:var(--ink)}
+.pn a.nx{text-align:right}
+@media (max-width:560px){.pn{grid-template-columns:1fr}.pn a.nx{text-align:left}}
+
+/* charts */
+.chart{min-width:0;position:relative}
+.chart svg{display:block;width:100%;height:auto;touch-action:pan-y;overflow:visible}
+.chart svg text{fill:var(--muted);font-family:var(--mono);font-size:11px}
+.axis{stroke:var(--line);stroke-width:1}
+.gridl{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4}
+.zero{stroke:var(--muted);stroke-width:1}
+.s1{stroke:var(--blue);fill:none;stroke-width:2.75;stroke-linejoin:round;stroke-linecap:round}
+.s2{stroke:var(--magenta);fill:none;stroke-width:2.75;stroke-linejoin:round;stroke-linecap:round}
+.d1{fill:var(--blue)} .d2{fill:var(--magenta)}
+.bar{fill:var(--blue)} .barneg{fill:var(--neg)} .barmuted{fill:var(--muted);opacity:.5}
+.chart svg text.ink,.thumb svg text.ink{fill:var(--ink)}
+.chart svg text.note{fill:var(--ink);font-family:var(--body);font-size:12.5px}
+.chart svg text.neg{fill:var(--neg);font-family:var(--body);font-size:12.5px;font-weight:600}
+.band{fill:var(--neg);fill-opacity:.09}
+.ring{fill:none;stroke:var(--blue);stroke-width:2}
+.guide{stroke:var(--ink);stroke-width:1;stroke-dasharray:3 3;opacity:.5}
+.hdot{stroke:var(--panel);stroke-width:2}
+.tipbg{fill:var(--ink)}
+.chart svg text.tip{fill:var(--paper);font-family:var(--mono);font-size:12px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:6px;border-radius:2px}
+.readout{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0;min-height:1.5em}
+.hint{font-size:13px;color:var(--muted)}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--paper)}
+.seg button{font:500 13px var(--body);border:0;background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--panel);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.play{font:500 13px var(--body);border:1px solid var(--blue);color:var(--blue);background:transparent;border-radius:999px;padding:6px 14px;cursor:pointer}
+.play[disabled]{opacity:.5;cursor:default}
+.caption{margin:0;font-size:14.5px;min-height:3em;border-left:2px solid var(--line);padding-left:12px}
+.caption.alert{border-color:var(--neg)}
+.caption.good{border-color:var(--blue)}
+
+/* animation states (only when motion is allowed) */
+.grow{transform-box:fill-box;transform-origin:50% 100%}
+.grow.down{transform-origin:50% 0}
+.growx{transform-box:fill-box;transform-origin:0 50%}
+.anim .draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.anim .grow{transform:scaleY(0)}
+.anim .growx{transform:scaleX(0)}
+.anim .fade{opacity:0}
+.anim.in .draw{stroke-dashoffset:0;transition:stroke-dashoffset 1.2s cubic-bezier(.3,.6,.2,1) var(--d,0s)}
+.anim.in .grow,.anim.in .growx{transform:none;transition:transform .6s cubic-bezier(.3,.6,.2,1) var(--d,0s)}
+.anim.in .fade{opacity:1;transition:opacity .45s ease var(--d,1s)}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;counter-reset:f}
+.flow li{counter-increment:f;border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;gap:2px;min-width:0;background:var(--panel)}
+.flow li b{font:700 15px var(--display);font-stretch:90%}
+.flow li b::before{content:counter(f) "  ";font-family:var(--mono);font-size:12px;color:var(--magenta);font-weight:500}
+.flow li span{font-size:13px;color:var(--muted);line-height:1.4}
+.flow li.next{border-style:dashed}
+.flow.anim li{opacity:.25}
+.flow.anim.in li{animation:lit .55s ease forwards;animation-delay:calc(var(--i) * .32s)}
+@keyframes lit{0%{opacity:.25;transform:translateY(6px)}60%{border-color:var(--blue)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.anim .draw,.anim .grow,.anim .growx,.anim .fade{transition:none!important}.flow.anim li{opacity:1;animation:none!important}}
+
+/* screenshots in a browser frame */
+.shot{margin:0;display:grid;gap:8px;min-width:0}
+.frame{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.fbar{height:28px;display:flex;align-items:center;gap:6px;padding:0 10px;border-bottom:1px solid var(--line);background:var(--paper)}
+.fbar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.fbar span{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-left:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot img{display:block;width:100%;height:auto;cursor:zoom-in}
+.shot figcaption{font-size:13.5px;color:var(--muted);max-width:68ch}
+@media (hover:none){.shot figcaption::after{content:" Tap the numbers or take the tour, or tap the image to enlarge."}}
+.zoom{position:fixed;inset:0;z-index:50;background:rgba(10,14,20,.94);overflow:auto;display:flex;align-items:flex-start;padding:16px;cursor:zoom-out}
+.zoom img{display:block;margin:auto;max-width:none;width:min(1600px,200vw);height:auto;border-radius:6px}
+@media (min-width:900px){.zoom img{width:min(1600px,96vw)}}
+.zoom button{position:fixed;top:12px;right:12px;font:600 14px/1 var(--body);padding:10px 14px;border-radius:6px;border:0;background:#fff;color:#111;cursor:pointer}
+
+footer{border-top:1px solid var(--line);margin-top:56px}
+footer .wrap{padding-block:28px 40px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;color:var(--muted);font-size:14px}
+footer a{color:var(--muted)}
+.js .case{display:none}
+.js .case.on{display:block}
+/* guided tours on screenshots */
+.fbar .tourbtn{margin-left:auto;font:500 12px var(--body);border:1px solid var(--blue);color:var(--blue);background:var(--panel);border-radius:999px;padding:3px 10px;cursor:pointer;white-space:nowrap;flex:none}
+.frame[data-tour] .fbar{height:34px}
+.stage{position:relative;overflow:hidden}
+.canvas{position:relative;transform-origin:0 0}
+.canvas.moving{transition:transform .75s cubic-bezier(.3,.6,.2,1)}
+.hl{position:absolute;border:calc(2.5px * var(--inv,1)) solid var(--amber);border-radius:calc(6px * var(--inv,1));box-shadow:0 0 0 9999px rgba(8,12,18,.5);pointer-events:none;opacity:0;transition:opacity .35s}
+.touring .hl{opacity:1}
+.hs{position:absolute;width:26px;height:26px;margin:0;border-radius:50%;border:2px solid #fff;background:var(--amber);color:#111;font:700 12px/1 var(--mono);cursor:pointer;transform:translate(-50%,-50%) scale(var(--inv,1));display:grid;place-items:center;padding:0;box-shadow:0 2px 8px rgba(0,0,0,.35);z-index:2}
+.hs::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--amber);opacity:0}
+.touring .hs{display:none}
+@media (prefers-reduced-motion:no-preference){
+  .hs::after{animation:pulse 2.4s ease-out infinite}
+  .hs:nth-of-type(2)::after{animation-delay:.4s}.hs:nth-of-type(3)::after{animation-delay:.8s}.hs:nth-of-type(4)::after{animation-delay:1.2s}.hs:nth-of-type(5)::after{animation-delay:1.6s}
+  @keyframes pulse{0%{opacity:.8;transform:scale(.8)}70%,100%{opacity:0;transform:scale(1.5)}}
+  .card .tframe img{transition:transform 1.6s ease;transform-origin:left top}
+  .card:hover .tframe img{transform:scale(1.12) translate(-3%,-2%)}
+}
+.tourpanel{border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:8px;background:var(--panel);padding:12px 14px;display:grid;gap:4px}
+.tourpanel .tp-n{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tourpanel b{font:700 17px/1.2 var(--display);font-stretch:90%}
+.tourpanel p{margin:0;font-size:14.5px}
+.tp-ctrl{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.tp-ctrl button{font:500 13px var(--body);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.tp-ctrl button.go{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tp-ctrl button[disabled]{opacity:.4;cursor:default}
+.tp-ctrl .x{margin-left:auto}
+.ai-rows{margin-top:18px}
+.where.yes{color:var(--blue);font-family:var(--mono);font-size:12.5px}
+.where.no{color:var(--magenta);font-family:var(--mono);font-size:12.5px}
+.about{display:grid;gap:12px;max-width:68ch}
+.about p{margin:0}
+.now{border-left:3px solid var(--amber);padding:4px 0 4px 14px;display:grid;gap:4px;margin-top:6px}
+.focusnote{font-size:14px;color:var(--muted);margin:-8px 0 16px}
+@media print{
+  :root,:root[data-theme="dark"],:root:not([data-theme="light"]){--paper:#fff;--panel:#fff;--ink:#111;--muted:#444;--line:#ccc;--grid:transparent;--blue:#1E5AA8;--magenta:#A3156F;--amber:#B86E00;--neg:#B3261E;color-scheme:light}
+  body{font-size:11pt;background:#fff}
+  .topbar,.actions,.chips,.focusnote,.pn,.back,.tourbtn,.hs,.tourpanel,.play,.seg,.readout,.zoom,.hint{display:none!important}
+  .hero{background:none}.hero .wrap{padding-block:0 12px}
+  .card,.visual,.shot,.stat,.row,.flow li{break-inside:avoid}
+  .anim .draw{stroke-dashoffset:0!important}.anim .grow,.anim .growx{transform:none!important}.anim .fade{opacity:1!important}
+  .flow.anim li{opacity:1!important;animation:none!important}
+  .canvas{transform:none!important}.hl{display:none}
+  .card{box-shadow:none;transform:none!important}
+  a{color:inherit;text-decoration:none}
+  .shot figcaption::after{content:""!important}
+  footer{display:none}.part>h3{break-after:avoid}
+  .case.on::after{content:"Moamal Al-Adili · moamal9@gmail.com";display:block;margin-top:18px;font-size:9pt;color:#666}
+}
+
+</style>
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#/">Moamal Al-Adili</a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#/projects">Projects</a>
+      <a href="#/ai" class="hide-s">AI method</a>
+      <a href="#/about" class="hide-s">About</a>
+      <button class="themebtn" id="theme" type="button">Dark mode</button>
+    </nav>
+  </div>
+</div>
+
+<main>
+<div id="home">
+  <header class="hero">
+    <div class="wrap">
+      <span class="label">Manchester, UK · Project management · Business analysis</span>
+      <h1>Moamal Al-Adili</h1>
+      <p class="lede">An aeronautical engineer who moved into business analysis and project management. I test ideas against evidence, then make sure they get delivered.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:moamal9@gmail.com">Email me</a>
+        <a class="btn ghost" href="Moamal-Al-Adili-CV.pdf" download>Download CV (PDF)</a>
+        <a class="btn ghost" id="linkedin" href="#" target="_blank" rel="noopener" hidden>LinkedIn</a>
+        <button class="btn ghost" id="copy" type="button">Copy email</button>
+        <span class="email" id="email">moamal9@gmail.com</span>
+        <span class="copied" id="copied" hidden>Copied</span>
+      </div>
+      <div class="highlights">
+        <div><b>MSc</b><span>Project Management, Liverpool</span></div>
+        <div><b>BEng</b><span>Aeronautical Engineering, Salford</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="block" id="projects">
+      <h2>Projects</h2>
+      <p class="intro">My own software tools, business case studies and university engineering work. Pick a theme, then open a project for the full case study.</p>
+      <div class="chips" role="group" aria-label="Filter projects" id="chips"></div>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section class="block" id="ai">
+      <h2>How I build with AI</h2>
+      <p class="intro">I use AI openly, and nothing it produces is trusted until it has been checked. This is the method behind both of my software tools.</p>
+      <ol class="flow method" aria-label="Method">
+        <li style="--i:0"><b>Define</b><span>Write the requirement and the pass or fail criteria first</span></li>
+        <li style="--i:1"><b>Calculate by hand</b><span>Work out the expected results before any code exists</span></li>
+        <li style="--i:2"><b>Build with AI</b><span>AI coding tools write code to that specification</span></li>
+        <li style="--i:3"><b>Test</b><span>Every change must pass the automated tests</span></li>
+        <li style="--i:4"><b>Approve</b><span>AI output inside the tools stays a draft until a person confirms it</span></li>
+      </ol>
+      <div class="rows ai-rows">
+        <div class="row"><div><h3>Writing the code</h3><span class="where yes">AI used</span></div><p>AI coding tools, working to my requirements. I set what counts as correct, and the code has to pass those tests.</p></div>
+        <div class="row"><div><h3>Schedule checks</h3><span class="where no">No AI</span></div><p>Plain arithmetic in Python, so the same schedule always gives the same answer.</p></div>
+        <div class="row"><div><h3>Register drafts</h3><span class="where yes">AI used</span></div><p>The schedule tool can draft risk, issue and assumption entries with a large language model. Each draft must quote its source word for word, which the code checks, and a named person signs it off.</p></div>
+        <div class="row"><div><h3>Reading design documents</h3><span class="where yes">AI used</span></div><p>EnergySim Pro uses a large language model to pull values out of PDF briefs. A person confirms each value before it enters the model.</p></div>
+        <div class="row"><div><h3>Energy results</h3><span class="where no">No AI</span></div><p>EnergyPlus does the physics. No number on the dashboard comes from a language model.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <p>I am based in Manchester and work as a Property Coordinator at Simtrava, where I track maintenance spend, compliance records and contractors across stores. Before that I led about 25 agents in airport ramp and cargo operations at DNATA.</p>
+        <p>Outside work I build small software tools that cut manual work for people I know in different industries, so they can spend their time on the work itself. I also walk in the Peak District once or twice a month, often along the Snake Path.</p>
+        <div class="now"><span class="label">Working on now · October 2026</span><p>Fixing EnergySim Pro's heating defaults before comparing it against real IES VE projects, and preparing the schedule checker for a trial on real project data.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <h2>Experience</h2>
+      <div class="rows">
+        <div class="row"><div><h3>Property Coordinator</h3><span class="where">Simtrava · 2025 to now</span></div><p>Monitor maintenance spending against budget, check compliance records and coordinate contractors across sites.</p></div>
+        <div class="row"><div><h3>Junior Business Manager</h3><span class="where">DNATA</span></div><p>Led about 25 agents in airport ramp and cargo operations against service targets, using root-cause analysis to find and clear bottlenecks.</p></div>
+        <div class="row"><div><h3>Co-founder</h3><span class="where">Platinum Events</span></div><p>Co-founded a non-profit that ran more than 10 events across universities, managing budgets and safety, and raised over £5,000 for charity.</p></div>
+        <div class="row"><div><h3>Aerodynamics team member</h3><span class="where">Salford Racing</span></div><p>Used CFD and wind tunnel testing to check whether design changes made a measurable difference.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="education">
+      <h2>Education</h2>
+      <div class="rows">
+        <div class="row"><div><h3>MSc Project Management</h3><span class="where">University of Liverpool · 2025</span></div><p>Dissertation on strategy and finance in a business simulation.</p></div>
+        <div class="row"><div><h3>BEng Aeronautical Engineering</h3><span class="where">University of Salford</span></div><p>Final year project in CFD analysis of aerofoil and UAV aerodynamics.</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="skills">
+      <h2>Skills and tools</h2>
+      <div class="skills">
+        <div><span class="label">Analysis</span><ul><li>Excel models, formulas and charts</li><li>Power BI</li><li>Root-cause analysis</li></ul></div>
+        <div><span class="label">Delivery</span><ul><li>Stakeholder analysis and RACI</li><li>MS Project scheduling</li><li>Budget and contractor tracking</li></ul></div>
+        <div><span class="label">Technical</span><ul><li>Python and SQLite</li><li>EnergyPlus and OpenStudio</li><li>AI-assisted development and LLM integration</li><li>ANSYS Fluent (CFD) and SolidWorks</li></ul></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ============ CASE STUDIES ============ -->
+
+<article class="case wrap narrow" id="p-schedule" data-short="Schedule quality checker">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>Own software tool</span><span>2026</span></div>
+    <h2 tabindex="-1">A schedule quality checker for project planners</h2>
+    <p class="sum">A local tool that checks a project schedule the same way every time and shows the evidence behind each finding.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>Own software tool</dd></div><div><dt>When</dt><dd>2026</dd></div><div><dt>Tools</dt><dd>Python, SQLite, Streamlit, AI-assisted development</dd></div></dl>
+  <figure class="shot">
+    <div class="frame" data-tour="summary"><div class="fbar"><i></i><i></i><i></i><span>Schedule checker · Results summary</span></div>
+    <img id="img-summary" src="schedule-summary.webp" alt="Results summary: 4 checks pass, 1 passes with a data gap, 4 fail, 1 not applicable, with four plain-English findings for the planner." width="1400" height="451"></div>
+    <figcaption>Results summary. The tool turns the checks into the four things a planner would look at first, and flags a date it could not read.</figcaption>
+  </figure>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>Planners check schedules by hand, and two people can reach different answers on the same file. Missing logic or a hard constraint is easy to miss in a long programme.</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ul class="points">
+      <li>Built a local tool that runs ten checks adapted from the DCMA 14-point assessment, such as missing logic, negative float and hard constraints.</li>
+      <li>Worked out the expected result for each check by hand first, then tested the tool against those answers.</li>
+      <li>Made every finding list the activity IDs behind it, so a planner can see exactly why it was flagged.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>How AI was used</h3>
+    <ul class="points">
+      <li><b>Building it:</b> AI coding tools wrote most of the code. I wrote the requirements and the hand-calculated expected results, and the code had to pass those tests.</li>
+      <li><b>The checks:</b> no AI. They are plain arithmetic, so the same schedule always gives the same result.</li>
+      <li><b>Register drafts:</b> the tool can draft risk, issue and assumption entries from project documents with a large language model. Each draft must quote its source word for word, which the code checks, and a named person signs it off before it is recorded.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>04</span>Result</h3>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>Checks adapted from the DCMA 14-point assessment</span></div>
+      <div class="stat"><b>2,100+</b><span>Automated tests on synthetic schedules</span></div>
+    </div>
+    <figure class="shot">
+      <div class="frame" data-tour="checks"><div class="fbar"><i></i><i></i><i></i><span>Schedule checker · Check results</span></div>
+      <img src="schedule-checks.webp" alt="Table of ten checks with result, threshold and pass or fail, and the logic check opened to show the two activities behind it." width="1400" height="746" loading="lazy"></div>
+      <figcaption>Each check shows its result against the threshold. Opening one lists the exact activities and spreadsheet rows behind the finding.</figcaption>
+    </figure>
+    <p>The next step is a trial on real project data.</p>
+  </section>
+  <section class="part"><h3><span>05</span>Skills used</h3>
+    <ul class="skillchips"><li>Schedule analysis (DCMA 14-point)</li><li>Project controls</li><li>Python and SQLite</li><li>Streamlit</li><li>Test design</li><li>AI-assisted development</li><li>Checking AI output</li></ul>
+  </section>
+  <p class="footnote">Screens from the interface design, filled with results from a real run of the tool on a synthetic sample schedule.</p>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-energysim" data-short="EnergySim Pro">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>Own software tool</span><span>Since 2026</span></div>
+    <h2 tabindex="-1">EnergySim Pro: from building design documents to an energy model</h2>
+    <p class="sum">A desktop tool that reads building design documents, builds an energy model and runs it in EnergyPlus, with checks attached to every result.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>Own software tool</dd></div><div><dt>When</dt><dd>Since 2026</dd></div><div><dt>Tools</dt><dd>Python, OpenStudio, EnergyPlus, DuckDB, LLM integration</dd></div></dl>
+  <figure class="shot">
+    <div class="frame" data-tour="dash"><div class="fbar"><i></i><i></i><i></i><span>EnergySim Pro · Results dashboard</span></div>
+    <img id="img-dash" src="energysim-dashboard.webp" alt="EnergySim Pro results dashboard for a seven-zone sample office: energy use intensity, monthly energy demand, end-use split, 3D zone model and audit checks" width="1832" height="963"></div>
+    <figcaption>The results dashboard on a sample seven-zone office (Kestrel House, Chicago weather). Energy figures sit next to the comfort and audit checks, so a result is never shown without them.</figcaption>
+  </figure>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>Sustainability engineers spend hours copying room schedules, U-values and system specifications out of PDF design documents into simulation software such as IES VE. It is slow, and a typing error can carry through to the final energy figures.</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ol class="flow" aria-label="How the tool works">
+      <li style="--i:0"><b>Read</b><span>Design PDFs: schedules, specifications, room data</span></li>
+      <li style="--i:1"><b>Build</b><span>Zones, constructions and systems in OpenStudio</span></li>
+      <li style="--i:2"><b>Run</b><span>EnergyPlus simulation, with checks before it starts</span></li>
+      <li style="--i:3"><b>Report</b><span>Energy results, each shown with its comfort checks</span></li>
+      <li style="--i:4" class="next"><b>Validate</b><span>Next: compare against real IES VE projects</span></li>
+    </ol>
+    <ul class="points">
+      <li>The tool pulls tables and specifications out of the documents, and each value is checked by a person before it is used.</li>
+      <li>Every energy figure appears next to its guard checks (unmet heating and cooling hours, lowest unoccupied temperature), so a result that looks good but leaves people cold cannot slip through.</li>
+    </ul>
+    <figure class="shot">
+      <div class="frame" data-tour="extract"><div class="fbar"><i></i><i></i><i></i><span>EnergySim Pro · Document review (design concept)</span></div>
+      <img src="energysim-document-review.webp" alt="Design concept of the document review screen: the source brief on the left, and a table mapping each space to a thermal zone with the quoted source line and a confirmed or needs review status" width="1600" height="790" loading="lazy"></div>
+      <figcaption>Design concept for the document review screen, with sample data. A person confirms each value before it enters the model. Where the brief contradicts itself, as with the plant room ventilation here, the tool asks rather than guesses.</figcaption>
+    </figure>
+  </section>
+  <section class="part"><h3><span>03</span>How AI was used</h3>
+    <ul class="points">
+      <li><b>Building it:</b> written with AI coding tools, in stages, each with pass or fail criteria before the next starts.</li>
+      <li><b>Reading documents:</b> extraction uses a large language model. A person confirms each value before it goes into the model.</li>
+      <li><b>The numbers:</b> EnergyPlus does the energy calculation, so no result on the dashboard comes from AI.</li>
+      <li><b>Measuring it:</b> I am scoring the extraction on a set of test documents, comparing a hybrid mode with an AI-only mode. Until those results are in, I make no claim about its accuracy.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>04</span>Result</h3>
+    <div class="stats">
+      <div class="stat"><b>161</b><span>Automated tests passing</span></div>
+      <div class="stat"><b>7 zones</b><span>Simulated benchmark office</span></div>
+    </div>
+    <ul class="points">
+      <li><b>Built in stages:</b> each stage has pass or fail criteria before the next starts.</li>
+      <li><b>Catching bad results:</b> an early default setup gave an unrealistic energy use of about 470 kWh/m² a year on a test building. I traced it to the ventilation and heating defaults, and the fix is being tested.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>05</span>Skills used</h3>
+    <ul class="skillchips"><li>Building energy modelling</li><li>EnergyPlus and OpenStudio</li><li>Python</li><li>Data validation</li><li>Staged testing</li><li>LLM integration</li><li>AI-assisted development</li></ul>
+  </section>
+  <p class="footnote">Not yet validated against IES VE. The next stage runs real projects, with Manchester weather data, through both tools and compares the results.</p>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-greggs" data-short="Greggs and Debenhams">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>Business case study</span><span>2026</span></div>
+    <h2 tabindex="-1">Greggs and Debenhams: why one adapted and the other could not</h2>
+    <p class="sum">Two UK high-street names faced the same shift in how people shop. I compared them on the same measures to find out why their results split.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>Business case study</dd></div><div><dt>When</dt><dd>2026</dd></div><div><dt>Tools</dt><dd>Excel, published annual results</dd></div></dl>
+  <div class="visual">
+    <div class="chart" data-chart="greggs" data-live="ro-greggs" role="group" aria-label="Revenue index, 2015 equals 100. Greggs rises to 123.2 by 2018; Debenhams falls to 98.0."></div>
+    <div class="legend"><span><i style="background:var(--blue)"></i>Greggs</span><span><i style="background:var(--magenta)"></i>Debenhams</span><span>Revenue index, 2015 = 100</span></div>
+    <p class="readout" id="ro-greggs" aria-live="polite">Hover or tap the chart to read each year.</p>
+  </div>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>Greggs kept its menu and changed where and how people buy it. Debenhams had a large store estate with fixed costs and could not change fast enough. I wanted to see whether the numbers backed that story.</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ul class="points">
+      <li>Built an Excel model from published results to compare both on revenue, margin and profit.</li>
+      <li>Split Greggs' sales growth into existing shops and new shops.</li>
+      <li>Traced how Debenhams' fixed costs turned a small sales dip into a large fall in profit.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>Result</h3>
+    <div class="stats">
+      <div class="stat"><b>+23%</b><span>Greggs revenue, 2015 to 2018</span></div>
+      <div class="stat"><b>−2%</b><span>Debenhams revenue, same years</span></div>
+      <div class="stat"><b>8.7% vs 1.9%</b><span>Operating margin in 2018</span></div>
+      <div class="stat"><b>−71%</b><span>Debenhams underlying profit, FY2015 to FY2018</span></div>
+    </div>
+    <ul class="points">
+      <li><b>Is Greggs' growth real?</b> Like-for-like growth fell from 4.2% (2016) to 2.4% (2025), so more growth now comes from new openings.</li>
+      <li><b>Why flat sales hurt Debenhams:</b> with rent and staff costs fixed, a 2% sales dip became a 71% fall in underlying profit.</li>
+      <li><b>Lesson for clients:</b> watch margins and fixed costs, not only sales. Debenhams' gross margin fell 160 basis points months before its record loss.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>04</span>Skills used</h3>
+    <ul class="skillchips"><li>Financial statement analysis</li><li>Excel modelling</li><li>Like-for-like analysis</li><li>Cost structure</li></ul>
+  </section>
+  <p class="footnote">Sources: Greggs results announcements and FashionUnited reports of Debenhams results. Financial year-ends differ, and Debenhams' 2017 operating profit is derived from its reported 59.6% fall.</p>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-porsche" data-short="Porsche pricing power">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>Business case study</span><span>University report, updated 2026</span></div>
+    <h2 tabindex="-1">Porsche: the pricing power behind its margins, tested against 2025</h2>
+    <p class="sum">My university report explained how Porsche earned far more per car than larger premium brands. In 2026 I tested it against Porsche's latest results.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>Business case study</dd></div><div><dt>When</dt><dd>University report, updated 2026</dd></div><div><dt>Methods</dt><dd>Pricing, positioning, market analysis</dd></div></dl>
+  <div class="visual">
+    <div class="ctrl">
+      <div class="seg" role="group" aria-label="Choose view">
+        <button type="button" data-mode="a" aria-pressed="true">2012: profit per car</button>
+        <button type="button" data-mode="b" aria-pressed="false">2024 vs 2025</button>
+      </div>
+    </div>
+    <div class="chart" data-chart="porsche" role="img" aria-label="Profit per car sold in 2012: Porsche 16,590 euros, Audi 3,821, BMW 3,495, Mercedes-Benz 2,012."></div>
+    <div class="legend" id="lg-porsche"></div>
+  </div>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>How did a small carmaker make several times more profit per car than Audi, BMW and Mercedes-Benz, and does that logic still hold?</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <p>The original report looked at how Porsche positioned the 911 in 2012 and 2013. It kept prices high and protected exclusivity: no model was to sell below about €50,000, and the average Porsche sold for about €90,000.</p>
+    <ul class="points">
+      <li>Compared profit per car against the premium volume brands.</li>
+      <li>Mapped the 911 against its direct rivals: the Audi R8, BMW M6 and Nissan GT-R.</li>
+      <li>In 2026, checked every figure against a dated source, dropped the ones I could not verify, and added Porsche's 2024 and 2025 results.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>Result</h3>
+    <ul class="points">
+      <li><b>Pricing:</b> Porsche made about €16,600 per car, a margin of 18.4%, against about €3,500 for BMW and €3,800 for Audi.</li>
+      <li><b>Positioning:</b> the 911 competed on handling and everyday use, and sold more than 26,000 units in 2012.</li>
+      <li><b>Brand:</b> Porsche had the fastest-growing brand value of any carmaker in Interbrand's 2013 ranking, up 26%.</li>
+    </ul>
+    <div class="stats">
+      <div class="stat"><b>143k → 279k</b><span>Deliveries, 2012 to 2025</span></div>
+      <div class="stat"><b>14.1% → 1.1%</b><span>Operating return on sales, 2024 to 2025</span></div>
+      <div class="stat"><b>€3.9bn</b><span>One-off costs in 2025: strategy reset, batteries, US tariffs</span></div>
+      <div class="stat"><b>51,583</b><span>911s delivered in 2025, up on 2024</span></div>
+    </div>
+    <p><b>What the update shows:</b> deliveries roughly doubled, but in 2025 revenue fell 9.5% and operating profit fell 93%, mainly from €3.9bn of one-off costs. The 911, the core of the original analysis, still grew. Porsche's own response is "value over volume", which is the pricing logic my report described.</p>
+  </section>
+  <section class="part"><h3><span>04</span>Skills used</h3>
+    <ul class="skillchips"><li>Market and competitor analysis</li><li>Pricing strategy</li><li>Financial results analysis</li><li>Source checking</li></ul>
+  </section>
+  <p class="footnote">2012 figures: Porsche AG and Wirtschaftswoche (August 2013); brand values: Interbrand Best Global Brands 2013. 2024 and 2025 figures: Porsche AG annual results, March 2026. Profit per car is as reported by Wirtschaftswoche.</p>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-simulation" data-short="Business simulation">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>MSc dissertation</span><span>2025</span><span>University of Liverpool</span></div>
+    <h2 tabindex="-1">Running a simulated car maker: a costly mistake and the recovery</h2>
+    <p class="sum">I ran Titan Holdings, a car maker, through a nine-round business simulation. One bad call in round 3 put it into overdraft, and the rest of the game was the recovery.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>MSc Project Management dissertation</dd></div><div><dt>When</dt><dd>2025</dd></div><div><dt>Where</dt><dd>University of Liverpool</dd></div></dl>
+  <div class="visual">
+    <div class="ctrl"><span class="hint">Closing bank balance by round (£m)</span><button class="play" type="button" id="play-sim">▶ Play the nine rounds</button></div>
+    <div class="chart" data-chart="sim" role="img" aria-label="Closing bank balance by round in pounds million. Round 3 is negative at minus 319; round 9 ends at 2,496."></div>
+    <p class="caption" id="cap-sim" aria-live="polite">Press play to step through each round.</p>
+  </div>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>I made the company's decisions each round, and the dissertation judged each one against strategy theory and the competing teams.</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ul class="points">
+      <li>In round 3 I pushed production ahead of demand and was left with £1.75bn of unsold stock and an overdraft.</li>
+      <li>Over the next rounds I cut production back to demand and cleared the stock.</li>
+      <li>Repaid £1.7bn of loans and finished debt free.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>Result</h3>
+    <div class="stats">
+      <div class="stat"><b>−£319m</b><span>Overdrawn after round 3</span></div>
+      <div class="stat"><b>£2.5bn</b><span>Cash at the end, debt free</span></div>
+      <div class="stat"><b>£88.55 → £1,407.85</b><span>Share price, round 1 to round 9</span></div>
+    </div>
+    <p><b>What I learnt:</b> check the demand assumption and watch cash and stock early. The warning signs (liquidity at zero, share price down a third) appeared before the loss did.</p>
+  </section>
+  <section class="part"><h3><span>04</span>Skills used</h3>
+    <ul class="skillchips"><li>Strategic decision-making</li><li>Cash flow and stock control</li><li>Financial analysis</li><li>Reflective evaluation</li></ul>
+  </section>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-airbus" data-short="Airbus delays">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>Team project</span><span>Airbus Project Management Challenge</span></div>
+    <h2 tabindex="-1">Why do projects keep running late? A knowledge-sharing plan for Airbus</h2>
+    <p class="sum">A cross-border team project on recurring project delays, presented to senior Airbus representatives.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>Team project</dd></div><div><dt>For</dt><dd>Airbus Project Management Challenge</dd></div><div><dt>My part</dt><dd>Root causes, stakeholders, RACI</dd></div></dl>
+  <div class="visual">
+    <span class="hint">How the work fitted together</span>
+    <ol class="flow" aria-label="How the work fitted together">
+      <li style="--i:0"><b>Root causes</b><span>Why delays kept recurring: gaps in communication</span></li>
+      <li style="--i:1"><b>Stakeholders</b><span>Who is affected and who has influence</span></li>
+      <li style="--i:2"><b>RACI</b><span>Who is responsible for what</span></li>
+      <li style="--i:3"><b>Recommendation</b><span>A central portal for sharing good practice</span></li>
+      <li style="--i:4"><b>Presentation</b><span>To senior Airbus representatives</span></li>
+    </ol>
+  </div>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>Project delays kept recurring. Working in a cross-border team, we looked at why, starting from gaps in how teams communicated.</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ul class="points">
+      <li>Ran the root-cause analysis of communication gaps.</li>
+      <li>Wrote the stakeholder analysis.</li>
+      <li>Wrote the RACI matrix that set out who is responsible for what.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>Result</h3>
+    <ul class="points">
+      <li>Recommended a central portal for sharing good practice between teams.</li>
+      <li>Presented the recommendations to senior Airbus representatives.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>04</span>Skills used</h3>
+    <ul class="skillchips"><li>Root-cause analysis</li><li>Stakeholder analysis</li><li>RACI</li><li>Presenting to senior stakeholders</li><li>Cross-border teamwork</li></ul>
+  </section>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-cfd" data-short="NACA 2412 and MQ-1 CFD">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>BEng final year project</span><span>University of Salford</span></div>
+    <h2 tabindex="-1">CFD analysis of the NACA 2412 aerofoil and the MQ-1 Predator</h2>
+    <p class="sum">A 2D study of a common aerofoil, followed by a model of a full UAV to see where pressure builds and where the flow separates.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>BEng final year project</dd></div><div><dt>Where</dt><dd>University of Salford</dd></div><div><dt>Tools</dt><dd>ANSYS Fluent, SolidWorks</dd></div></dl>
+  <div class="visual">
+    <div class="chart" data-chart="cfd" data-live="ro-cfd" role="group" aria-label="Lift to drag ratio against angle of attack. Peaks at about 63 at 8 degrees, falling to 25 at 18 degrees."></div>
+    <div class="legend"><span><i style="background:var(--blue)"></i>Lift-to-drag ratio</span><span>Angle of attack (degrees)</span></div>
+    <p class="readout" id="ro-cfd" aria-live="polite">Hover or tap the chart to read each simulated angle.</p>
+  </div>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>Find the angle of attack where the aerofoil works best, where it stalls, and where the drag on a full aircraft comes from.</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ul class="points">
+      <li>Simulated a NACA 2412 aerofoil in 2D at 100 m/s across angles of attack from −4° to 18°.</li>
+      <li>Used a C-type mesh and the k-ω SST turbulence model, with y+ below 1 at the wall.</li>
+      <li>Modelled a half MQ-1 Predator in SolidWorks and ran it in Fluent.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>Result</h3>
+    <div class="stats">
+      <div class="stat"><b>63 at 8°</b><span>Peak lift-to-drag: the best cruise angle</span></div>
+      <div class="stat"><b>~16°</b><span>Lift stops rising as separation grows</span></div>
+    </div>
+    <ul class="points">
+      <li><b>Full aircraft:</b> high pressure at the nose and separation at the rear, which is where most of the drag comes from.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>04</span>Skills used</h3>
+    <ul class="skillchips"><li>CFD (ANSYS Fluent)</li><li>Meshing and turbulence modelling</li><li>3D CAD (SolidWorks)</li><li>Interpreting results</li></ul>
+  </section>
+  <p class="footnote">Ratios come from the lift and drag forces in the 2D simulation. A next step would be a 3D wing study across a range of speeds.</p>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+
+<article class="case wrap narrow" id="p-b777" data-short="Boeing 777-200 performance">
+  <a class="back" href="#/projects">← All projects</a>
+  <div class="case-head">
+    <div class="tags"><span>Aircraft performance study</span><span>University of Salford</span></div>
+    <h2 tabindex="-1">Boeing 777-200: payload, range and runway performance</h2>
+    <p class="sum">An Excel performance model of the 777-200, revisited in 2026 to correct the range calculation.</p>
+  </div>
+  <dl class="facts"><div><dt>Type</dt><dd>Aircraft performance study</dd></div><div><dt>Where</dt><dd>University of Salford</dd></div><div><dt>Tools</dt><dd>Excel</dd></div></dl>
+  <div class="visual">
+    <div class="chart" data-chart="b777" data-live="ro-777" role="group" aria-label="Payload against range. Full payload of 49.7 tonnes up to about 4,800 km, then payload falls as fuel replaces it, reaching zero at about 12,500 km."></div>
+    <div class="legend"><span><i style="background:var(--blue)"></i>Payload (tonnes) against range (km), at maximum take-off weight</span></div>
+    <p class="readout" id="ro-777" aria-live="polite">Hover or tap anywhere on the chart to read the payload at that range.</p>
+  </div>
+  <section class="part"><h3><span>01</span>The problem</h3>
+    <p>How far can a 777-200 fly with a given payload, and how much runway does it need to take off and land?</p>
+  </section>
+  <section class="part"><h3><span>02</span>What I did</h3>
+    <ul class="points">
+      <li>Built a model covering take-off and landing distances, the flight envelope and the payload-range trade-off.</li>
+      <li>In 2026 I rechecked the range calculation and corrected the cruise speed to Mach 0.84.</li>
+    </ul>
+  </section>
+  <section class="part"><h3><span>03</span>Result</h3>
+    <div class="stats">
+      <div class="stat"><b>~4,800 km</b><span>Range with full 49.7 t payload</span></div>
+      <div class="stat"><b>~12,500 km</b><span>Range with no payload</span></div>
+      <div class="stat"><b>69 m/s</b><span>Stall speed at take-off weight (134 kt)</span></div>
+      <div class="stat"><b>2×</b><span>Landing distance on a wet runway without reversers, against dry with reversers</span></div>
+    </div>
+  </section>
+  <section class="part"><h3><span>04</span>Skills used</h3>
+    <ul class="skillchips"><li>Aircraft performance</li><li>Excel modelling</li><li>Checking and correcting a model</li></ul>
+  </section>
+  <p class="footnote">Weights: 229.5 t maximum take-off, 201.9 t maximum landing, 190.5 t maximum zero fuel. Range uses a simplified Breguet estimate (lift-to-drag 16.8, fuel use 0.55 lb/lbf/hr, 5% reserve), so it is a first-order figure, not an airline planning number.</p>
+  <nav class="pn" aria-label="More projects"></nav>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Moamal Al-Adili · Manchester, UK</span>
+    <a href="mailto:moamal9@gmail.com">moamal9@gmail.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- settings ---------- */
+  var LINKEDIN=""; // paste your LinkedIn profile URL here to show the button
+  var FOCUS_NOTE={pm:"Showing project management work first.",ba:"Showing business analysis work first.",sus:"Showing sustainability work first.",eng:"Showing engineering work first."};
+
+  var PROJECTS=[
+    {slug:"schedule",cats:["pm"],cat:"Own software tool",title:"Schedule quality checker",result:"Ten DCMA-based checks that give the same answer every run, with 2,100+ automated tests.",tools:"Python · SQLite · Streamlit",thumb:"img-summary"},
+    {slug:"energysim",cats:["sus","eng"],cat:"Own software tool",title:"EnergySim Pro",result:"From PDF design documents to an EnergyPlus model, with checks on every result.",tools:"Python · OpenStudio · EnergyPlus",thumb:"img-dash"},
+    {slug:"greggs",cats:["ba"],cat:"Business case study",title:"Greggs and Debenhams",result:"+23% against −2% revenue, 2015 to 2018, and why fixed costs decided it.",tools:"Excel · Annual results",thumb:"greggs"},
+    {slug:"porsche",cats:["ba"],cat:"Business case study",title:"Porsche pricing power",result:"€16,590 profit per car in 2012, then a 1.1% return on sales in 2025.",tools:"Market analysis · Pricing",thumb:"porsche"},
+    {slug:"simulation",cats:["pm","ba"],cat:"MSc dissertation",title:"A costly mistake and the recovery",result:"From £319m overdrawn in round 3 to £2.5bn and debt free.",tools:"Strategy · Cash flow",thumb:"sim"},
+    {slug:"airbus",cats:["pm"],cat:"Team project",title:"Why Airbus projects ran late",result:"Root causes, stakeholder analysis and a RACI, presented to senior Airbus staff.",tools:"Root-cause analysis · RACI",thumb:"airbus"},
+    {slug:"cfd",cats:["eng"],cat:"BEng final year project",title:"NACA 2412 and MQ-1 CFD",result:"Lift-to-drag peaks at 63 at 8°, with stall from about 16°.",tools:"ANSYS Fluent · SolidWorks",thumb:"cfd"},
+    {slug:"b777",cats:["eng"],cat:"Aircraft performance study",title:"Boeing 777-200 performance",result:"Full 49.7 t payload to about 4,800 km, and 12,500 km with none.",tools:"Excel",thumb:"b777"}
+  ];
+  var CATS=[["all","All"],["pm","Project management"],["ba","Business analysis"],["sus","Sustainability"],["eng","Engineering"]];
+  var ORDER=PROJECTS.map(function(p){return p.slug});
+
+  var NS="http://www.w3.org/2000/svg";
+  var RM=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
+  function el(t,a,x){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(x!=null)e.textContent=x;return e}
+  function frame(W,H){return el("svg",{viewBox:"0 0 "+W+" "+H,preserveAspectRatio:"xMidYMid meet"})}
+  function fmt(n){return n.toLocaleString("en-GB")}
+  function size(node){var w=Math.max(300,Math.round(node.clientWidth||640));return{W:w,H:w<520?250:300,narrow:w<520}}
+  function d(node,s){node.style.setProperty("--d",s+"s");return node}
+
+  /* animate once when in view */
+  var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;io.unobserve(t);requestAnimationFrame(function(){requestAnimationFrame(function(){t.classList.add("in")})})}})},{threshold:.3}):null;
+  function arm(node,animate){
+    node.classList.remove("in");
+    if(!animate||RM||!io){node.classList.remove("anim");return}
+    node.classList.add("anim");io.observe(node);
+  }
+  function drawable(p){try{var L=Math.ceil(p.getTotalLength());p.style.setProperty("--len",L)}catch(e){}p.classList.add("draw");return p}
+
+  /* ---------- line chart with a value readout ---------- */
+  function xyChart(node,o,animate){
+    var z=size(node),W=z.W,H=z.H,m={l:46,r:18,t:26,b:34};
+    var xt=(z.narrow&&o.xtNarrow)?o.xtNarrow:o.xt;
+    var s=frame(W,H),pw=W-m.l-m.r,ph=H-m.t-m.b;node.appendChild(s);
+    var X=function(v){return m.l+(v-o.x0)/(o.x1-o.x0)*pw},Y=function(v){return m.t+ph-(v-o.y0)/(o.y1-o.y0)*ph};
+    (o.bands||[]).forEach(function(b){s.appendChild(d(el("rect",{x:X(b.x0),y:m.t,width:X(b.x1)-X(b.x0),height:ph,"class":"band fade"}),1.1));if(b.t)s.appendChild(d(el("text",{x:(X(b.x0)+X(b.x1))/2,y:m.t-8,"text-anchor":"middle","class":"note fade"},b.t),1.2))});
+    o.yt.forEach(function(v){s.appendChild(el("line",{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),"class":v===0&&o.y0<0?"zero":"gridl"}));s.appendChild(el("text",{x:m.l-8,y:Y(v)+4,"text-anchor":"end"},o.yf?o.yf(v):v))});
+    xt.forEach(function(t){s.appendChild(el("text",{x:X(t[0]),y:H-12,"text-anchor":"middle"},t[1]))});
+    s.appendChild(el("line",{x1:m.l,x2:W-m.r,y1:m.t+ph,y2:m.t+ph,"class":"axis"}));
+    o.series.forEach(function(se){
+      var path=el("path",{d:se.pts.map(function(p,i){return(i?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)}).join(" "),"class":se.cls});
+      s.appendChild(path);drawable(path);
+      if(se.dots)se.pts.forEach(function(p,i){s.appendChild(d(el("circle",{cx:X(p[0]),cy:Y(p[1]),r:3.5,"class":se.dots+" fade"}),.4+i/se.pts.length*.9))});
+      (se.labels||[]).forEach(function(L){var p=se.pts[L.i];s.appendChild(d(el("text",{x:X(p[0])+(L.dx||0),y:Y(p[1])+(L.dy||-10),"text-anchor":L.a||"middle","class":"ink fade"},L.t),1.3))});
+    });
+    (o.marks||[]).forEach(function(k){s.appendChild(d(el("circle",{cx:X(k.x),cy:Y(k.y),r:9,"class":"ring fade"}),1.3))});
+    if(o.read)readout(node,s,o,X,Y,m,W,H);
+    arm(node,animate);
+  }
+  function readout(node,s,o,X,Y,m,W,H){
+    var live=node.dataset.live?document.getElementById(node.dataset.live):null;
+    var g=el("g",{});g.style.display="none";
+    var vl=el("line",{y1:m.t,y2:H-m.b,"class":"guide"});g.appendChild(vl);
+    var dots=o.series.map(function(se){var c=el("circle",{r:5.5,"class":"hdot "+(se.dots||"d1")});g.appendChild(c);return c});
+    var bg=el("rect",{rx:4,height:24,"class":"tipbg"}),tx=el("text",{"class":"tip"});g.appendChild(bg);g.appendChild(tx);s.appendChild(g);
+    s.appendChild(el("rect",{x:m.l,y:0,width:W-m.l-m.r,height:H-m.b,fill:"transparent"}));
+    s.setAttribute("tabindex","0");s.setAttribute("aria-label","Interactive chart. Use the left and right arrow keys to read values.");
+    var cur=null;
+    function show(r){if(!r)return;cur=r;g.style.display="";var px=X(r.x);vl.setAttribute("x1",px);vl.setAttribute("x2",px);
+      var top=1e9;dots.forEach(function(c,i){var y=r.ys[i];if(y==null){c.style.display="none";return}c.style.display="";c.setAttribute("cx",px);c.setAttribute("cy",Y(y));top=Math.min(top,Y(y))});
+      tx.textContent=r.t;var tw=tx.getComputedTextLength()+18;var bx=Math.min(Math.max(px-tw/2,m.l),W-m.r-tw);var by=Math.max(top-38,2);
+      bg.setAttribute("x",bx);bg.setAttribute("y",by);bg.setAttribute("width",tw);tx.setAttribute("x",bx+9);tx.setAttribute("y",by+16);
+      if(live)live.textContent=r.t}
+    function xv(e){var b=s.getBoundingClientRect();var vx=(e.clientX-b.left)*W/b.width;return o.x0+(vx-m.l)/(W-m.l-m.r)*(o.x1-o.x0)}
+    s.addEventListener("pointermove",function(e){show(o.read(xv(e)))});
+    s.addEventListener("pointerdown",function(e){show(o.read(xv(e)))});
+    s.addEventListener("pointerleave",function(e){if(e.pointerType==="mouse")g.style.display="none"});
+    s.addEventListener("focus",function(){show(cur||o.read(o.start))});
+    s.addEventListener("keydown",function(e){if(e.key!=="ArrowRight"&&e.key!=="ArrowLeft")return;e.preventDefault();show(o.step(cur||o.read(o.start),e.key==="ArrowRight"?1:-1))});
+  }
+  function snap(pts,fmtr){ // nearest real data point, never interpolated
+    return {read:function(x){var b=0;pts.forEach(function(p,i){if(Math.abs(p[0]-x)<Math.abs(pts[b][0]-x))b=i});return fmtr(b)},
+            step:function(r,dir){var i=Math.max(0,Math.min(pts.length-1,r.i+dir));return fmtr(i)}};
+  }
+
+  var CHARTS={
+    greggs:function(node,a){
+      var G=[[2015,100],[2016,107.0],[2017,114.9],[2018,123.2]],D=[[2015,100],[2016,99.5],[2017,100.5],[2018,98.0]];
+      var sn=snap(G,function(i){return{i:i,x:G[i][0],ys:[G[i][1],D[i][1]],t:G[i][0]+": Greggs "+G[i][1].toFixed(1)+", Debenhams "+D[i][1].toFixed(1)}});
+      xyChart(node,{x0:2014.8,x1:2018.2,y0:90,y1:130,yt:[90,100,110,120,130],xt:[[2015,"2015"],[2016,"2016"],[2017,"2017"],[2018,"2018"]],
+        series:[{pts:G,cls:"s1",dots:"d1",labels:[{i:3,t:"123.2",dy:-12}]},{pts:D,cls:"s2",dots:"d2",labels:[{i:3,t:"98.0",dy:20}]}],
+        read:sn.read,step:sn.step,start:2015},a);
+    },
+    cfd:function(node,a){
+      var P=[[-4,-20.7],[0,20.2],[2,38.8],[4,51.7],[6,60.1],[8,63.0],[10,59.9],[14,48.4],[16,38.4],[18,25.4]];
+      var sn=snap(P,function(i){return{i:i,x:P[i][0],ys:[P[i][1]],t:(P[i][0]<0?"−"+(-P[i][0]):P[i][0])+"°: L/D "+P[i][1].toFixed(1).replace("-","−")}});
+      xyChart(node,{x0:-5,x1:19,y0:-30,y1:70,yt:[-20,0,20,40,60],yf:function(v){return v<0?"−"+(-v):v},
+        xt:[[-4,"−4°"],[0,"0°"],[4,"4°"],[8,"8°"],[12,"12°"],[16,"16°"]],xtNarrow:[[0,"0°"],[8,"8°"],[16,"16°"]],
+        bands:[{x0:16,x1:19,t:"stall"}],marks:[{x:8,y:63}],
+        series:[{pts:P,cls:"s1",dots:"d1",labels:[{i:5,t:"peak 63 at 8°",dy:-16}]}],
+        read:sn.read,step:sn.step,start:8},a);
+    },
+    b777:function(node,a){
+      var P=[[0,49.71],[4800,49.71],[6139,40],[7590,30],[9123,20],[10747,10],[12474,0]];
+      function at(x){x=Math.max(0,Math.min(12474,x));for(var i=1;i<P.length;i++){if(x<=P[i][0]){var f=(x-P[i-1][0])/(P[i][0]-P[i-1][0]);return P[i-1][1]+f*(P[i][1]-P[i-1][1])}}return 0}
+      function r(x){x=Math.round(Math.max(0,Math.min(12474,x))/100)*100;var y=at(x);
+        return{x:x,ys:[y],t:x<=4800?fmt(x)+" km: full 49.7 t payload":(x>=12400?"about "+fmt(x)+" km: no payload, fuel only":"about "+fmt(x)+" km: about "+Math.round(y)+" t payload")}}
+      xyChart(node,{x0:0,x1:13500,y0:0,y1:60,yt:[0,10,20,30,40,50,60],yf:function(v){return v+" t"},
+        xt:[[0,"0"],[2000,"2,000"],[4000,"4,000"],[6000,"6,000"],[8000,"8,000"],[10000,"10,000"],[12000,"12,000"]],
+        xtNarrow:[[0,"0"],[4000,"4,000"],[8000,"8,000"],[12000,"12,000"]],
+        series:[{pts:P,cls:"s1",labels:[{i:1,t:"full payload to ~4,800 km",dy:-14,dx:-20}]}],
+        read:r,step:function(c,dir){return r(c.x+dir*500)},start:4800},a);
+    },
+    sim:function(node,a){
+      var V=SIM.map(function(r){return r[0]});
+      var z=size(node),W=z.W,H=z.H,m={l:52,r:10,t:26,b:34},s=frame(W,H),pw=W-m.l-m.r,ph=H-m.t-m.b,y0=-500,y1=3000;node.appendChild(s);
+      var Y=function(v){return m.t+ph-(v-y0)/(y1-y0)*ph},bw=pw/V.length;
+      [-500,0,1000,2000,3000].forEach(function(v){s.appendChild(el("line",{x1:m.l,x2:W-m.r,y1:Y(v),y2:Y(v),"class":v===0?"zero":"gridl"}));s.appendChild(el("text",{x:m.l-8,y:Y(v)+4,"text-anchor":"end"},v<0?"−500":fmt(v)))});
+      var bars=[],ticks=[];
+      V.forEach(function(v,i){var x=m.l+i*bw+bw*.18,w=bw*.64,top=Y(Math.max(v,0)),h=Math.abs(Y(v)-Y(0));
+        var r=d(el("rect",{x:x,y:top,width:w,height:Math.max(h,1),"class":(v<0?"barneg grow down":"bar grow")}),i*.09);s.appendChild(r);bars.push(r);
+        ticks.push(s.appendChild(el("text",{x:x+w/2,y:H-12,"text-anchor":"middle"},"R"+(i+1))))});
+      var n1=d(el("text",{x:m.l+2.5*bw,y:Y(-318.97)+17,"text-anchor":"middle","class":"neg fade"},"−£319m"),1.1);
+      var n2=d(el("text",{x:m.l+8.5*bw,y:Y(2495.57)-9,"text-anchor":"middle","class":"ink fade"},"£2.5bn"),1.2);
+      s.appendChild(n1);s.appendChild(n2);node._sim={bars:bars,notes:[n1,n2],ticks:ticks};
+      arm(node,a);
+    },
+    porsche:function(node,a){
+      var mode=node.dataset.mode||"a",z=size(node),W=z.W,s;
+      var lg=document.getElementById("lg-porsche");
+      if(mode==="a"){
+        var rows=[["Porsche",16590],["Audi",3821],["BMW",3495],["Mercedes-Benz",2012]];
+        var m={l:z.narrow?100:120,r:z.narrow?64:74,t:8,b:8},rh=44,H=m.t+m.b+rows.length*rh,pw=W-m.l-m.r;s=frame(W,H);node.appendChild(s);
+        rows.forEach(function(r,i){var y=m.t+i*rh,w=r[1]/18000*pw;
+          s.appendChild(el("text",{x:m.l-10,y:y+rh/2+4,"text-anchor":"end","class":"ink"},r[0]));
+          s.appendChild(d(el("rect",{x:m.l,y:y+10,width:Math.max(w,2),height:rh-20,rx:2,"class":(i===0?"bar":"barmuted")+" growx"}),i*.1));
+          s.appendChild(d(el("text",{x:m.l+w+8,y:y+rh/2+4,"class":i===0?"ink fade":"fade"},"€"+fmt(r[1])),.7+i*.1))});
+        node.setAttribute("aria-label","Profit per car sold in 2012: Porsche 16,590 euros, Audi 3,821, BMW 3,495, Mercedes-Benz 2,012.");
+        lg.innerHTML='<span><i style="background:var(--blue)"></i>Profit per car sold, 2012 (€)</span>';
+      }else{
+        var R=[["Deliveries",310718,279449,fmt,fmt],["Revenue",40.08,36.27,function(v){return"€"+v.toFixed(1)+"bn"}],["Operating profit",5.64,0.413,function(v){return v<1?"€"+Math.round(v*1000)+"m":"€"+v.toFixed(2)+"bn"}],["Return on sales",14.1,1.1,function(v){return v.toFixed(1)+"%"}]];
+        var m2={l:z.narrow?108:130,r:z.narrow?78:92,t:6,b:6},rh2=54,H2=m2.t+m2.b+R.length*rh2,pw2=W-m2.l-m2.r;s=frame(W,H2);node.appendChild(s);
+        R.forEach(function(r,i){var y=m2.t+i*rh2,mx=Math.max(r[1],r[2]),w1=r[1]/mx*pw2,w2=Math.max(r[2]/mx*pw2,2),f=r[3];
+          s.appendChild(el("text",{x:m2.l-10,y:y+rh2/2+4,"text-anchor":"end","class":"ink"},r[0]));
+          s.appendChild(d(el("rect",{x:m2.l,y:y+9,width:w1,height:14,rx:2,"class":"barmuted growx"}),i*.1));
+          s.appendChild(d(el("rect",{x:m2.l,y:y+27,width:w2,height:14,rx:2,"class":"bar growx"}),.25+i*.1));
+          s.appendChild(d(el("text",{x:m2.l+w1+8,y:y+20,"class":"fade"},f(r[1])),.8));
+          s.appendChild(d(el("text",{x:m2.l+w2+8,y:y+38,"class":"ink fade"},f(r[2])),.9))});
+        node.setAttribute("aria-label","Porsche 2024 against 2025: deliveries 310,718 to 279,449; revenue 40.1 to 36.3 billion euros; operating profit 5.64 billion to 413 million euros; return on sales 14.1% to 1.1%.");
+        lg.innerHTML='<span><i style="background:var(--muted);opacity:.6"></i>2024</span><span><i style="background:var(--blue)"></i>2025</span><span>Each row is scaled to its own largest value</span>';
+      }
+      arm(node,a);
+    }
+  };
+  var SIM=[[344.23,"Round 1: closing balance £344m."],[1158.12,"Round 2: £1,158m."],
+    [-318.97,"Round 3: production pushed ahead of demand. £1.75bn of unsold stock and an overdraft of £319m.","alert"],
+    [198.24,"Round 4: back above zero at £198m. Over the next rounds production is cut to demand and the stock is cleared."],
+    [1379.40,"Round 5: £1,379m."],[2448.50,"Round 6: £2,449m."],[2415.67,"Round 7: £2,416m."],[1829.72,"Round 8: £1,830m."],
+    [2495.57,"Round 9: £2,496m and debt free, after repaying £1.7bn of loans. Share price up from £88.55 to £1,407.85.","good"]];
+
+  function render(scope,animate){
+    scope.querySelectorAll(".chart[data-chart]").forEach(function(n){n.innerHTML="";CHARTS[n.dataset.chart](n,animate)});
+    scope.querySelectorAll(".flow").forEach(function(f){arm(f,animate)});
+  }
+
+  /* simulation: play round by round */
+  var playBtn=document.getElementById("play-sim"),cap=document.getElementById("cap-sim"),timer=null;
+  playBtn.addEventListener("click",function(){
+    var node=document.querySelector('[data-chart="sim"]');node.innerHTML="";CHARTS.sim(node,false);
+    var S=node._sim;S.bars.forEach(function(b){b.style.transition="none";b.style.transform="scaleY(0)"});S.notes.forEach(function(n){n.style.opacity=0});
+    S.ticks.forEach(function(t){t.style.opacity=.35});
+    void node.offsetWidth;playBtn.disabled=true;var i=0;clearInterval(timer);
+    function step(){var b=S.bars[i];b.style.transition=RM?"none":"transform .45s cubic-bezier(.3,.6,.2,1)";b.style.transform="scaleY(1)";S.ticks[i].style.opacity=1;
+      cap.textContent=SIM[i][1];cap.className="caption"+(SIM[i][2]?" "+SIM[i][2]:"");
+      if(i===2)S.notes[0].style.opacity=1;if(i===8){S.notes[1].style.opacity=1;clearInterval(timer);playBtn.disabled=false;playBtn.textContent="↺ Replay"}i++}
+    step();timer=setInterval(step,RM?1400:1100);
+  });
+
+  /* porsche toggle */
+  document.querySelectorAll("#p-porsche .seg button").forEach(function(b){b.addEventListener("click",function(){
+    document.querySelectorAll("#p-porsche .seg button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    var n=document.querySelector('[data-chart="porsche"]');n.dataset.mode=b.dataset.mode;n.innerHTML="";CHARTS.porsche(n,true)})});
+
+  /* ---------- card thumbnails ---------- */
+  function thumb(kind){
+    var s=el("svg",{viewBox:"0 0 320 180",preserveAspectRatio:"xMidYMid meet","aria-hidden":"true"}),W=320,H=180;
+    function line(pts,cls,dl){var p=el("path",{d:pts.map(function(q,i){return(i?"L":"M")+q[0]+" "+q[1]}).join(" "),"class":cls});s.appendChild(p);return p}
+    var paths=[];
+    if(kind==="greggs"){paths.push(line([[34,130],[110,112],[190,92],[270,70]],"s1"));paths.push(line([[34,130],[110,131],[190,128],[270,134]],"s2"));
+      s.appendChild(d(el("text",{x:276,y:66,"class":"ink fade"},"+23%"),1));s.appendChild(d(el("text",{x:276,y:140,"class":"ink fade"},"−2%"),1.1))}
+    if(kind==="porsche"){[[150,"bar"],[35,"barmuted"],[32,"barmuted"],[19,"barmuted"]].forEach(function(b,i){s.appendChild(d(el("rect",{x:40,y:36+i*30,width:b[0]*1.4,height:18,rx:2,"class":b[1]+" growx"}),i*.1))});
+      s.appendChild(d(el("text",{x:40+150*1.4+8,y:50,"class":"ink fade"},"€16.6k"),.8))}
+    if(kind==="sim"){var V=[344,1158,-319,198,1379,2449,2416,1830,2496];V.forEach(function(v,i){var y0=118,sc=.032,h=Math.abs(v)*sc;s.appendChild(d(el("rect",{x:36+i*29,y:v<0?y0:y0-h,width:18,height:h,"class":v<0?"barneg grow down":"bar grow"}),i*.08))});
+      s.appendChild(el("line",{x1:28,x2:300,y1:118,y2:118,"class":"zero"}))}
+    if(kind==="cfd"){paths.push(line([[30,150],[95,88],[120,64],[145,50],[170,41],[195,38],[220,41],[268,54],[290,64],[300,78]],"s1"));
+      s.appendChild(d(el("circle",{cx:195,cy:38,r:8,"class":"ring fade"}),1.1));s.appendChild(d(el("text",{x:195,y:24,"text-anchor":"middle","class":"ink fade"},"63"),1.2))}
+    if(kind==="b777"){paths.push(line([[30,46],[130,46],[160,72],[190,96],[222,118],[256,140],[292,160]],"s1"));
+      s.appendChild(el("line",{x1:30,x2:300,y1:160,y2:160,"class":"axis"}))}
+    if(kind==="airbus"){var L=[["R","A","C","I"],["A","R","I","C"],["C","I","R","A"]];L.forEach(function(row,r){row.forEach(function(c,k){
+        var g=d(el("rect",{x:70+k*48,y:36+r*40,width:40,height:32,rx:4,"class":c==="R"?"bar fade":"barmuted fade"}),.15*(r*4+k)/2);s.appendChild(g);
+        s.appendChild(d(el("text",{x:90+k*48,y:57+r*40,"text-anchor":"middle","class":"ink fade"},c),.15*(r*4+k)/2+.1))})})}
+    return s;
+  }
+  var cards=document.getElementById("cards"),chips=document.getElementById("chips");
+  PROJECTS.forEach(function(p){
+    var a=document.createElement("a");a.className="card";a.href="#/"+p.slug;a.dataset.cats=p.cats.join(" ");
+    var th=document.createElement("div");th.className="thumb";
+    if(p.thumb.indexOf("img-")===0){var src=document.getElementById(p.thumb);var f=document.createElement("div");f.className="tframe";
+      f.innerHTML='<div class="fbar"><i></i><i></i><i></i></div>';var im=document.createElement("img");im.src=src.src;im.alt="";im.loading="lazy";f.appendChild(im);th.appendChild(f)}
+    else{th.appendChild(thumb(p.thumb))}
+    var b=document.createElement("div");b.className="cbody";
+    b.innerHTML='<span class="ccat"></span><h3></h3><p></p><span class="ctools"></span><span class="cmore">Read case study →</span>';
+    b.children[0].textContent=p.cat;b.children[1].textContent=p.title;b.children[2].textContent=p.result;b.children[3].textContent=p.tools;
+    a.appendChild(th);a.appendChild(b);cards.appendChild(a);
+    if(p.thumb.indexOf("img-")!==0){th.querySelectorAll("path.s1,path.s2").forEach(drawable);arm(th,true)}
+  });
+  CATS.forEach(function(c){var n=c[0]==="all"?PROJECTS.length:PROJECTS.filter(function(p){return p.cats.indexOf(c[0])>=0}).length;
+    var b=document.createElement("button");b.type="button";b.className="chip";b.dataset.cat=c[0];b.setAttribute("aria-pressed",c[0]==="all"?"true":"false");
+    b.innerHTML=c[1]+'<span>'+n+'</span>';chips.appendChild(b);
+    b.addEventListener("click",function(){chips.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+      cards.querySelectorAll(".card").forEach(function(k){var on=c[0]==="all"||k.dataset.cats.split(" ").indexOf(c[0])>=0;k.hidden=!on;k.classList.remove("show");if(on){void k.offsetWidth;k.classList.add("show")}})})});
+
+  /* tailored link: ?focus=pm | ba | sus | eng */
+  (function(){var f=null;try{f=new URLSearchParams(location.search).get("focus")}catch(e){}
+    if(!f||!FOCUS_NOTE[f])return;
+    var all=[].slice.call(cards.children);all.filter(function(k){return k.dataset.cats.split(" ").indexOf(f)>=0}).reverse().forEach(function(k){cards.insertBefore(k,cards.firstChild)});
+    var n=document.createElement("p");n.className="focusnote";n.textContent=FOCUS_NOTE[f]+" Choose All to see everything.";chips.parentNode.insertBefore(n,cards);
+    var ch=chips.querySelector('[data-cat="'+f+'"]');if(ch)ch.click();
+  })();
+  document.querySelectorAll("#home .flow").forEach(function(f){arm(f,true)});
+
+  /* prev / next links */
+  ORDER.forEach(function(slug,i){var art=document.getElementById("p-"+slug),pn=art.querySelector(".pn");
+    var pv=ORDER[(i-1+ORDER.length)%ORDER.length],nx=ORDER[(i+1)%ORDER.length];
+    function link(s,cls,lab){var a=document.createElement("a");a.href="#/"+s;a.className=cls;a.innerHTML="<span>"+lab+"</span><b></b>";a.querySelector("b").textContent=document.getElementById("p-"+s).dataset.short;return a}
+    pn.appendChild(link(pv,"pv","← Previous"));pn.appendChild(link(nx,"nx","Next →"))});
+
+  /* ---------- routing ---------- */
+  var home=document.getElementById("home"),BASE="Moamal Al-Adili · Portfolio",current=null;
+  function route(){
+    var h=decodeURIComponent(location.hash.replace(/^#\/?/,""));
+    document.querySelectorAll(".case").forEach(function(c){c.classList.remove("on")});
+    if(ORDER.indexOf(h)>=0){
+      home.hidden=true;var art=document.getElementById("p-"+h);art.classList.add("on");current=art;
+      document.title=art.dataset.short+" · Moamal Al-Adili";window.scrollTo(0,0);render(art,true);
+      var t=art.querySelector("h2");try{t.focus({preventScroll:true})}catch(e){}
+    }else{
+      var wasCase=!!current;home.hidden=false;current=null;document.title=BASE;
+      var sec=document.getElementById(h);
+      if(sec&&["projects","ai","about","experience","education","skills"].indexOf(h)>=0)sec.scrollIntoView();else if(wasCase||!h)window.scrollTo(0,0);
+    }
+  }
+  function track(){try{if(window.goatcounter&&window.goatcounter.count){var h=location.hash.replace(/^#\/?/,"");if(ORDER.indexOf(h)>=0)window.goatcounter.count({path:"/project/"+h,title:document.title})}}catch(e){}}
+  window.addEventListener("hashchange",function(){route();track()});route();
+
+  var lastW=window.innerWidth,rt=null;
+  window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){if(Math.abs(window.innerWidth-lastW)<4)return;lastW=window.innerWidth;if(current)render(current,false)},200)});
+
+  /* ---------- theme ---------- */
+  var root=document.documentElement,tb=document.getElementById("theme");
+  function isDark(){var t=root.getAttribute("data-theme");if(t)return t==="dark";return !!(window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)}
+  function lab(){tb.textContent=isDark()?"Light mode":"Dark mode"}
+  tb.addEventListener("click",function(){var n=isDark()?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}lab()});lab();
+
+  /* ---------- contact ---------- */
+  if(LINKEDIN){var li=document.getElementById("linkedin");li.href=LINKEDIN;li.hidden=false}
+  var cb=document.getElementById("copy"),cc=document.getElementById("copied"),em=document.getElementById("email");
+  cb.addEventListener("click",function(){
+    var done=function(){cc.hidden=false;setTimeout(function(){cc.hidden=true},1800)};
+    function sel(){var r=document.createRange();r.selectNodeContents(em);var w=window.getSelection();w.removeAllRanges();w.addRange(r)}
+    try{navigator.clipboard.writeText(em.textContent.trim()).then(done,sel)}catch(x){sel()}
+  });
+
+
+  /* ---------- guided tours on screenshots ---------- */
+  var TOURS={
+    summary:[
+      {x:0,y:0,w:1,h:.27,t:"Verdicts at a glance",d:"Ten checks sorted into pass, pass with data gaps, fail and not applicable, with the check numbers under each."},
+      {x:.01,y:.48,w:.245,h:.33,t:"Behind programme",d:"A failed check turned into plain English: a task with −3 days of float that is already late against the completion date."},
+      {x:.255,y:.48,w:.245,h:.33,t:"Broken logic",d:"Two tasks are not tied into the network, so a slip in either would not move the end date."},
+      {x:.5,y:.48,w:.245,h:.33,t:"Hard to manage",d:"Tasks longer than 44 working days are flagged, with the suggestion to split them."},
+      {x:0,y:.86,w:1,h:.14,t:"Data it could not read",d:"A cell holding \"TBC\" instead of a date is reported with its exact row, and the affected check says what it skipped."}],
+    checks:[
+      {x:0,y:.06,w:.58,h:.87,t:"Ten checks against thresholds",d:"Each row shows the result, the threshold adapted from the DCMA 14-point assessment and a verdict."},
+      {x:0,y:.11,w:.58,h:.1,t:"A failed check",d:"Logic: 2 of 19 tasks (10.5%) are missing a link, against a limit of 5%."},
+      {x:.6,y:.02,w:.4,h:.48,t:"The evidence behind it",d:"Opening a check lists the exact activities and spreadsheet rows, so the planner can go straight to the problem."},
+      {x:0,y:.78,w:.58,h:.15,t:"Honest about gaps",d:"Check 09 passes with a data gap, and a check with nothing to test is marked not applicable instead of passing."},
+      {x:0,y:.925,w:.58,h:.075,t:"What is not built yet",d:"Four of the fourteen DCMA checks are not built yet, and the screen says so."}],
+    dash:[
+      {x:.045,y:.1,w:.795,h:.075,t:"Headline results",d:"Energy use intensity, total energy, peak heating and cooling loads, comfort compliance and floor area for the whole building."},
+      {x:.045,y:.18,w:.31,h:.76,t:"3D zone model",d:"The seven zones of the sample office, built from the room data and coloured by temperature."},
+      {x:.355,y:.18,w:.48,h:.27,t:"Energy over the year",d:"Monthly heating and cooling demand, and how the energy splits between heating, cooling, lighting, equipment and fans."},
+      {x:.84,y:.38,w:.16,h:.2,t:"Where the inputs came from",d:"A record of what was read from the design brief, how many spaces were mapped and whether anything needs a manual check."},
+      {x:.84,y:.59,w:.16,h:.28,t:"Checks on every run",d:"Run status, a read-back of the inputs and the comfort check sit next to the results, so a good-looking number cannot hide a problem."}],
+    extract:[
+      {x:.012,y:.137,w:.35,h:.79,t:"The source brief",d:"The design brief, with every value the tool picked up highlighted on the page."},
+      {x:.37,y:.137,w:.62,h:.09,t:"Summary",d:"Seven spaces found, total area checked against the brief, six values confirmed and one waiting for a decision."},
+      {x:.62,y:.31,w:.19,h:.53,t:"Every value has a source",d:"Each row quotes the line of the brief it came from, with the page and table."},
+      {x:.37,y:.62,w:.62,h:.09,t:"A conflict in the brief",d:"The brief gives 4 air changes per hour for the plant room and a later note says 6. The tool flags it instead of picking one."},
+      {x:.37,y:.855,w:.62,h:.085,t:"A person decides",d:"Nothing enters the model until someone confirms it."}]
+  };
+  document.querySelectorAll(".frame[data-tour]").forEach(function(fr){
+    var steps=TOURS[fr.dataset.tour];if(!steps)return;
+    var img=fr.querySelector("img"),fig=fr.parentNode,bar=fr.querySelector(".fbar");
+    var stage=document.createElement("div");stage.className="stage";var cv=document.createElement("div");cv.className="canvas";
+    img.parentNode.insertBefore(stage,img);stage.appendChild(cv);cv.appendChild(img);
+    var hl=document.createElement("div");hl.className="hl";cv.appendChild(hl);
+    steps.forEach(function(s,i){var h=document.createElement("button");h.type="button";h.className="hs";h.textContent=i+1;h.setAttribute("aria-label","Show: "+s.t);
+      h.style.left=((s.x+s.w/2)*100)+"%";h.style.top=((s.y+s.h/2)*100)+"%";cv.appendChild(h);
+      h.addEventListener("click",function(e){e.stopPropagation();go(i)})});
+    var tb=document.createElement("button");tb.type="button";tb.className="tourbtn";tb.textContent="▶ Take the tour";bar.appendChild(tb);
+    var pn=document.createElement("div");pn.className="tourpanel";pn.hidden=true;pn.setAttribute("aria-live","polite");
+    pn.innerHTML='<span class="tp-n"></span><b></b><p></p><div class="tp-ctrl"><button type="button" class="pv">← Back</button><button type="button" class="go nx">Next →</button><button type="button" class="x">Exit tour</button></div>';
+    fig.insertBefore(pn,fr.nextSibling);
+    var cur=-1;
+    function place(s,sc){cv.style.setProperty("--inv",1/sc);hl.style.left=s.x*100+"%";hl.style.top=s.y*100+"%";hl.style.width=s.w*100+"%";hl.style.height=s.h*100+"%"}
+    function go(i){
+      cur=i;var s=steps[i];fr.classList.add("touring");pn.hidden=false;
+      var sc=Math.max(1,Math.min(.9/s.w,.9/s.h,3.4));
+      var cx=s.x+s.w/2,cy=s.y+s.h/2,tx=Math.min(0,Math.max(1-sc,.5-cx*sc)),ty=Math.min(0,Math.max(1-sc,.5-cy*sc));
+      cv.classList.toggle("moving",!RM);cv.style.transform="translate("+(tx*100)+"%,"+(ty*100)+"%) scale("+sc+")";place(s,sc);
+      pn.querySelector(".tp-n").textContent=(i+1)+" of "+steps.length;pn.querySelector("b").textContent=s.t;pn.querySelector("p").textContent=s.d;
+      pn.querySelector(".pv").disabled=i===0;pn.querySelector(".nx").textContent=i===steps.length-1?"Finish":"Next →";
+      tb.textContent="■ Exit tour";
+    }
+    function stop(){cur=-1;fr.classList.remove("touring");pn.hidden=true;cv.style.transform="";cv.style.setProperty("--inv",1);tb.textContent="▶ Take the tour"}
+    tb.addEventListener("click",function(){if(cur<0){go(0);if(fr.getBoundingClientRect().top<60)fr.scrollIntoView({block:"start"})}else stop()});
+    pn.querySelector(".pv").addEventListener("click",function(){if(cur>0)go(cur-1)});
+    pn.querySelector(".nx").addEventListener("click",function(){if(cur<steps.length-1)go(cur+1);else stop()});
+    pn.querySelector(".x").addEventListener("click",stop);
+    pn.addEventListener("keydown",function(e){if(e.key==="Escape")stop();if(e.key==="ArrowRight"&&cur<steps.length-1)go(cur+1);if(e.key==="ArrowLeft"&&cur>0)go(cur-1)});
+    img.addEventListener("click",function(e){if(cur>=0){e.stopImmediatePropagation();var n=cur+1;n<steps.length?go(n):stop()}},true);
+  });
+  /* ---------- enlarge screenshots ---------- */
+  document.querySelectorAll(".shot img").forEach(function(im){im.addEventListener("click",function(){
+    var z=document.createElement("div");z.className="zoom";z.setAttribute("role","dialog");z.setAttribute("aria-label","Enlarged image");
+    var c=im.cloneNode();c.removeAttribute("loading");c.removeAttribute("id");var b=document.createElement("button");b.textContent="Close";z.appendChild(c);z.appendChild(b);
+    function shut(){z.remove();document.removeEventListener("keydown",k);im.focus&&im.focus()}function k(e){if(e.key==="Escape")shut()}
+    z.addEventListener("click",shut);document.addEventListener("keydown",k);document.body.appendChild(z);b.focus()})});
+})();
+</script>
+
+</body>
+</html>
